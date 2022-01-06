@@ -13,7 +13,7 @@ class AlbumList extends StatefulWidget {
 
 class _AlbumListState extends State<AlbumList> {
   String albumName = "";
-  bool showList = false;
+  //bool showList = false;
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +28,7 @@ class _AlbumListState extends State<AlbumList> {
             children: [
               searchForAlbums(),
               ElevatedButton(onPressed: doSearch, child: Text("Search")),
-              if (showList) setStreamBuilder(),
+              setStreamBuilder(),
             ],
           ),
         ),
@@ -86,9 +86,9 @@ class _AlbumListState extends State<AlbumList> {
 
   void doSearch() {
     bloc.fetchAllAlbums(albumName);
-    setState(() {
-      showList = true;
-    });
+    // setState(() {
+    //   showList = true;
+    // });
   }
 
   Widget setStreamBuilder() {
